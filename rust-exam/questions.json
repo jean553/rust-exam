@@ -1,0 +1,12 @@
+{
+    "questions": [
+        {
+            "question": "Does the following code compile ?",
+            "code": "let a = 5;",
+            "a": "Yes",
+            "b": "No",
+            "c": "Yes maybe",
+            "d": "No maybe"
+        }
+    ]
+}
