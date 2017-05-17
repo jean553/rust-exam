@@ -3,7 +3,7 @@ extern crate serde_json;
 use std::fs::File;
 use std::io::Read;
 
-use serde_json::Value;
+use serde_json::value::Value;
 
 fn main() {
 
@@ -14,5 +14,9 @@ fn main() {
     file.read_to_string(&mut content).unwrap();
 
     let json: Value = serde_json::from_str(&content).unwrap();
-    println!("{}", json["questions"][0]["question"]);
+
+    for i in 0..3 {
+
+        println!("{}", json["questions"][i]["question"].as_str().unwrap());
+    }
 }
