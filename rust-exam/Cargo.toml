@@ -1,0 +1,6 @@
+[package]
+name = "rust-exam"
+version = "0.1.0"
+authors = ["Jean LELIEVRE <Jean.LELIEVRE@supinfo.com>"]
+
+[dependencies]
