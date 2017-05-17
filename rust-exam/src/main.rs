@@ -15,8 +15,7 @@ fn main() {
 
     let json: Value = serde_json::from_str(&content).unwrap();
 
-    for i in 0..3 {
-
+    for i in 0..2 {
         println!("{}", json["questions"][i]["question"].as_str().unwrap());
     }
 }

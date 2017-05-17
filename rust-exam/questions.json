@@ -2,27 +2,19 @@
     "questions": [
         {
             "question": "Does the following code compile ?",
-            "code": "let a = 5;",
+            "code": "let variable: (mut &str, u32) = (\"hello\", 65000);",
             "a": "Yes",
-            "b": "No",
-            "c": "Yes maybe",
-            "d": "No maybe"
+            "b": "No, 65000 is too high for the u32 type",
+            "c": "No, 'hello' is not of the type &str",
+            "d": "No, it is not possible to have mut before the type in a tuple"
         },
         {
-            "question": "Does the following code compile ?",
-            "code": "let a = 5;",
+            "question": "Does the following code compile ? (other_variable = 10)",
+            "code": "let var = if other_variable == 5 {10};",
             "a": "Yes",
-            "b": "No",
-            "c": "Yes maybe",
-            "d": "No maybe"
-        },
-        {
-            "question": "Does the following code compile ?",
-            "code": "let a = 5;",
-            "a": "Yes",
-            "b": "No",
-            "c": "Yes maybe",
-            "d": "No maybe"
+            "b": "No, it is impossible to determine the type of var",
+            "c": "No, it is forbidden to right if statements this way",
+            "d": "No, the return keyword is missing before the 10"
         }
     ]
 }
