@@ -15,6 +15,30 @@
             "b": "No, it is impossible to determine the type of var",
             "c": "No, it is forbidden to right if statements this way",
             "d": "No, the return keyword is missing before the 10"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let array = [10; 20];",
+            "a": "Yes, it creates an array of 10 elements with the value 20",
+            "b": "Yes, it creates an array of 20 elemenst with the value 10",
+            "c": "Yes, it creates an array with two items 10 and 20",
+            "d": "No, the data type of the array items must be specified"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let array = [10, 20, 30, 40, 50]; let my_slice = &array[2..4]; println(\"{}\", my_slice[2]);",
+            "a": "Yes, it compiles and it runs correctly",
+            "b": "Yes, it compiles but there is an out of bounds error during the execution",
+            "c": "No, the syntax .. doesn't exist in Rust",
+            "d": "No, the 'array' variable name is forbidden"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let vs = vec![1, 2, 3]; for v in vs {println!(\"{}\", v);} println!(\"{}\", vs[0]);",
+            "a": "Yes, it compiles and it displays 1 2 3 1",
+            "b": "Yes, it compiles and it displays 1 2 3",
+            "c": "Yes, it compiles and it displays 1 2 3 and generates an index out of bounds error",
+            "d": "No"
         }
     ]
 }
