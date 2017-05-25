@@ -6,23 +6,26 @@
             "a": "Yes",
             "b": "No, 65000 is too high for the u32 type",
             "c": "No, 'hello' is not of the type &str",
-            "d": "No, it is not possible to have mut before the type in a tuple"
+            "d": "No, it is not possible to have mut before the type in a tuple",
+            "answer": "d"
         },
         {
             "question": "Does the following code compile ? (other_variable = 10)",
             "code": "let var = if other_variable == 5 {10};",
             "a": "Yes",
             "b": "No, it is impossible to determine the type of var",
-            "c": "No, it is forbidden to right if statements this way",
-            "d": "No, the return keyword is missing before the 10"
+            "c": "No, it is forbidden to write if statements this way",
+            "d": "No, the return keyword is missing before the 10",
+            "answer": "c"
         },
         {
             "question": "Does the following code compile ?",
             "code": "let array = [10; 20];",
             "a": "Yes, it creates an array of 10 elements with the value 20",
-            "b": "Yes, it creates an array of 20 elemenst with the value 10",
+            "b": "Yes, it creates an array of 20 elements with the value 10",
             "c": "Yes, it creates an array with two items 10 and 20",
-            "d": "No, the data type of the array items must be specified"
+            "d": "No, the data type of the array items must be specified",
+            "answer": "b"
         },
         {
             "question": "Does the following code compile ?",
@@ -30,7 +33,8 @@
             "a": "Yes, it compiles and it runs correctly",
             "b": "Yes, it compiles but there is an out of bounds error during the execution",
             "c": "No, the syntax .. doesn't exist in Rust",
-            "d": "No, the 'array' variable name is forbidden"
+            "d": "No, the 'array' variable name is forbidden",
+            "answer": "b"
         },
         {
             "question": "Does the following code compile ?",
@@ -38,7 +42,17 @@
             "a": "Yes, it compiles and it displays 1 2 3 1",
             "b": "Yes, it compiles and it displays 1 2 3",
             "c": "Yes, it compiles and it displays 1 2 3 and generates an index out of bounds error",
-            "d": "No"
+            "d": "No",
+            "answer": "d"
+        },
+        {
+            "question": "Is the following code a `binding` in Rust and what is the most correct definition of a `binding` ?",
+            "code": "let (a, b) = (5, 10);",
+            "a": "The example code is a binding, it binds some values to names, the left-side is called a `pattern`.",
+            "b": "The example code is a binding, it is used to declare variables.",
+            "c": "The example code is not a binding, it binds some values to names, the left-side is called a `pattern`.",
+            "d": "The example code is not a binding, it is used to declare variables.",
+            "answer": "a"
         }
     ]
 }
