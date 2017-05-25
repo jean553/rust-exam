@@ -1,7 +1,10 @@
 extern crate serde_json;
 
-use std::fs::File;
+use std::io;
 use std::io::Read;
+use std::cmp::Eq;
+
+use std::fs::File;
 
 use serde_json::value::Value;
 
@@ -15,7 +18,62 @@ fn main() {
 
     let json: Value = serde_json::from_str(&content).unwrap();
 
-    for i in 0..2 {
-        println!("{}", json["questions"][i]["question"].as_str().unwrap());
+    let mut mark: u8 = 0;
+
+    for counter in 0..6 {
+
+        let group = &json["questions"][counter];
+
+        println!(
+            "{}. {}",
+            counter,
+            group["question"].as_str().unwrap()
+        );
+
+        println!(
+            "{}", 
+            group["code"].as_str().unwrap()
+        );
+
+        println!(
+            "a) {}",
+            group["a"].as_str().unwrap()
+        );
+
+        println!(
+            "b) {}",
+            group["b"].as_str().unwrap()
+        );
+
+        println!(
+            "c) {}",
+            group["c"].as_str().unwrap()
+        );
+
+        println!(
+            "d) {}",
+            group["d"].as_str().unwrap()
+        );
+
+        let mut response = String::new();
+        io::stdin().read_line(&mut response).expect("error reading the input");
+
+        // required to compare the input with the correct answer
+        let response: &str = response.trim();
+
+        let answer: &str = group["answer"].as_str().unwrap();
+
+        match response.eq(answer) {
+            true => {
+                println!("Correct!");
+                mark += 1;
+            },
+            false => println!("Wrong"),
+        }
     }
+
+    println!(
+        "Mark: {} / 6",
+        mark
+    );
 }
