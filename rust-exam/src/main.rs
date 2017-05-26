@@ -19,7 +19,7 @@ fn main() {
 
     let mut mark: u8 = 0;
 
-    for counter in 0..7 {
+    for counter in 0..8 {
 
         let group = &json["questions"][counter];
 
@@ -72,7 +72,7 @@ fn main() {
     }
 
     println!(
-        "Mark: {} / 6",
+        "Mark: {} / 8",
         mark
     );
 }

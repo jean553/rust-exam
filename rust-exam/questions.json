@@ -57,11 +57,20 @@
         {
             "question": "Does the following code compile ?",
             "code": "let x = 50;",
-            "a": "No, the type is not specified.",
-            "b": "No, the `mut` keyword is missing.",
-            "c": "Yes, the type of x is u8.",
-            "d": "Yes, the type of x is i32.",
+            "a": "No, the type is not specified",
+            "b": "No, the `mut` keyword is missing",
+            "c": "Yes, the type of x is u8",
+            "d": "Yes, the type of x is i32",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x = \"hello\";",
+            "a": "No, the type is not specified",
+            "b": "No, the `mut` keyword is missing",
+            "c": "Yes, the type of x is &str",
+            "d": "Yes, the type of x is String",
+            "answer": "c"
         }
     ]
 }
