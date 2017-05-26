@@ -53,6 +53,15 @@
             "c": "The example code is not a binding, it binds some values to names, the left-side is called a `pattern`.",
             "d": "The example code is not a binding, it is used to declare variables.",
             "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x = 50;",
+            "a": "No, the type is not specified.",
+            "b": "No, the `mut` keyword is missing.",
+            "c": "Yes, the type of x is u8.",
+            "d": "Yes, the type of x is i32.",
+            "answer": "d"
         }
     ]
 }

@@ -2,7 +2,6 @@ extern crate serde_json;
 
 use std::io;
 use std::io::Read;
-use std::cmp::Eq;
 
 use std::fs::File;
 
@@ -20,7 +19,7 @@ fn main() {
 
     let mut mark: u8 = 0;
 
-    for counter in 0..6 {
+    for counter in 0..7 {
 
         let group = &json["questions"][counter];
 
