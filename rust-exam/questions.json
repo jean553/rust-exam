@@ -98,6 +98,15 @@
             "c": "Yes, the displayed content is 20 and 10",
             "d": "Yes, the displayed content is 20 and 20",
             "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut x = 0; x = 10; let x = 20; x = 30; println!(\"{}\", x);",
+            "a": "No",
+            "b": "Yes, it displays 30",
+            "c": "Yes, it displays 20",
+            "d": "Yes, it displays 10",
+            "answer": "a"
         }
     ]
 }
