@@ -71,6 +71,15 @@
             "c": "Yes, the type of x is &str",
             "d": "Yes, the type of x is String",
             "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x: u32; println(\"{}\", x);",
+            "a": "No",
+            "b": "Yes, the displayed value is undefined because x was not initialized",
+            "c": "Yes, the displayed value is 0",
+            "d": "Yes, but the code panics during the x variable creation",
+            "answer": "a"
         }
     ]
 }
