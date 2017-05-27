@@ -8,6 +8,3 @@ before_script:
 
 script:
     - cargo build --bin rust-exam
-    - cargo run --bin rust-exam & echo $! > /tmp/service.pid 
-    - sleep 5 # let some time for the service to start
-    - kill "$(cat /tmp/service.pid)"
