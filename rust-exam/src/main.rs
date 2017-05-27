@@ -12,6 +12,19 @@ fn display_separator() {
     println!("----------------------");
 }
 
+/// Displays the exemple code of the question
+fn display_code(code: &str) {
+
+    display_separator();
+
+    println!(
+        "{}",
+        code
+    );
+
+    display_separator();
+}
+
 fn main() {
 
     println!("rust-exam");
@@ -24,7 +37,7 @@ fn main() {
 
     let mut mark: u8 = 0;
 
-    for counter in 0..15 {
+    for counter in 0..16 {
 
         let group = &json["questions"][counter];
 
@@ -34,14 +47,10 @@ fn main() {
             group["question"].as_str().unwrap()
         );
 
-        display_separator();
-
-        println!(
-            "{}", 
-            group["code"].as_str().unwrap()
-        );
-
-        display_separator();
+        match group["code"].as_str() {
+            Some(code) => display_code(code),
+            None => {}
+        }
 
         println!(
             "a) {}",
