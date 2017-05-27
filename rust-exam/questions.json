@@ -29,7 +29,7 @@
         },
         {
             "question": "Does the following code compile ?",
-            "code": "let array = [10, 20, 30, 40, 50]; let my_slice = &array[2..4]; println(\"{}\", my_slice[2]);",
+            "code": "let array = [10, 20, 30, 40, 50]; \nlet my_slice = &array[2..4]; \nprintln(\"{}\", my_slice[2]);",
             "a": "Yes, it compiles and it runs correctly",
             "b": "Yes, it compiles but there is an out of bounds error during the execution",
             "c": "No, the syntax .. doesn't exist in Rust",
@@ -38,7 +38,7 @@
         },
         {
             "question": "Does the following code compile ?",
-            "code": "let vs = vec![1, 2, 3]; for v in vs {println!(\"{}\", v);} println!(\"{}\", vs[0]);",
+            "code": "let vs = vec![1, 2, 3]; \nfor v in vs {println!(\"{}\", v);} \nprintln!(\"{}\", vs[0]);",
             "a": "Yes, it compiles and it displays 1 2 3 1",
             "b": "Yes, it compiles and it displays 1 2 3",
             "c": "Yes, it compiles and it displays 1 2 3 and generates an index out of bounds error",
@@ -74,7 +74,7 @@
         },
         {
             "question": "Does the following code compile ?",
-            "code": "let x: u32; println(\"{}\", x);",
+            "code": "let x: u32; \nprintln(\"{}\", x);",
             "a": "No",
             "b": "Yes, the displayed value is undefined because x was not initialized",
             "c": "Yes, the displayed value is 0",
@@ -83,7 +83,7 @@
         },
         {
             "question": "Does the following code compile ?",
-            "code": "let x: u32 = 0; let x = 15; println(\"{}\", x);",
+            "code": "let x: u32 = 0; \nlet x = 15; \nprintln(\"{}\", x);",
             "a": "No, it is not possible to declare two variables with the same name",
             "b": "No, the type of the second variable declaration is not specified",
             "c": "Yes, the displayed value is 0",
@@ -92,7 +92,7 @@
         },
         {
             "question": "Does the following code compile ?",
-            "code": "let x = 10; {let x = 20; println!(\"{}\", x);} println!(\"{}\", x);",
+            "code": "let x = 10; \n{\nlet x = 20; \nprintln!(\"{}\", x);\n} \nprintln!(\"{}\", x);",
             "a": "No, the same variable is declared two times",
             "b": "No, it is not allowed to declare a block without condition, function or loop instruction",
             "c": "Yes, the displayed content is 20 and 10",
@@ -101,7 +101,7 @@
         },
         {
             "question": "Does the following code compile ?",
-            "code": "let mut x = 0; x = 10; let x = 20; x = 30; println!(\"{}\", x);",
+            "code": "let mut x = 0; \nx = 10; \nlet x = 20; \nx = 30; \nprintln!(\"{}\", x);",
             "a": "No",
             "b": "Yes, it displays 30",
             "c": "Yes, it displays 20",
