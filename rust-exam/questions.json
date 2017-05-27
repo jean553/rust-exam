@@ -125,6 +125,15 @@
             "c": "Yes, it displays 0 and 0",
             "d": "Yes, it displays 1 and 0",
             "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn get_value(x: u32) {\nx + 5\n}\n\nfn main() {\nprintln!(\"{}\", get_value(10));\n}",
+            "a": "Yes",
+            "b": "No, the x argument of the function get_value is not mutable",
+            "c": "No, the semicolon is missing after x + 5",
+            "d": "No, the returned value of get_value cannot be a parameter of the println! macro",
+            "answer": "a"
         }
     ]
 }
