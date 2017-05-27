@@ -80,6 +80,15 @@
             "c": "Yes, the displayed value is 0",
             "d": "Yes, but the code panics during the x variable creation",
             "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x: u32 = 0; let x = 15; println(\"{}\", x);",
+            "a": "No, it is not possible to declare two variables with the same name",
+            "b": "No, the type of the second variable declaration is not specified",
+            "c": "Yes, the displayed value is 0",
+            "d": "Yes, the displayed value is 15",
+            "answer": "d"
         }
     ]
 }
