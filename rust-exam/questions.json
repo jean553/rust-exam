@@ -116,6 +116,15 @@
             "c": "Yes, it displays 0 and 0",
             "d": "Yes, it displays 1 and 0",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(x: u32) {\n x += 1; \nprintln(\"{}\", x);\n}\nfn main() {\nlet mut x = 0;\nfunction(x);\nprintln!(\"{}\", x);\n}",
+            "a": "No",
+            "b": "Yes, it displays 1 and 1",
+            "c": "Yes, it displays 0 and 0",
+            "d": "Yes, it displays 1 and 0",
+            "answer": "a"
         }
     ]
 }
