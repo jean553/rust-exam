@@ -134,6 +134,14 @@
             "c": "No, the semicolon is missing after x + 5",
             "d": "No, the returned value of get_value cannot be a parameter of the println! macro",
             "answer": "a"
+        },
+        {
+            "question": "What means a `-> !` return type ?",
+            "a": "The function returns nothing",
+            "b": "The function never returns",
+            "c": "The function may return different data types",
+            "d": "The function accepts unsafe code",
+            "answer": "b"
         }
     ]
 }
