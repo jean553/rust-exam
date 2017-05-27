@@ -89,6 +89,15 @@
             "c": "Yes, the displayed value is 0",
             "d": "Yes, the displayed value is 15",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x = 10; {let x = 20; println!(\"{}\", x);} println!(\"{}\", x);",
+            "a": "No, the same variable is declared two times",
+            "b": "No, it is not allowed to declare a block without condition, function or loop instruction",
+            "c": "Yes, the displayed content is 20 and 10",
+            "d": "Yes, the displayed content is 20 and 20",
+            "answer": "c"
         }
     ]
 }
