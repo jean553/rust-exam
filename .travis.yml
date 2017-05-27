@@ -1,0 +1,13 @@
+language: rust
+
+rust:
+    - nightly
+
+before_script:
+    - cd rust-exam/ 
+
+script:
+    - cargo build --bin rust-exam
+    - cargo run --bin rust-exam & echo $! > /tmp/service.pid 
+    - sleep 5 # let some time for the service to start
+    - kill "$(cat /tmp/service.pid)"
