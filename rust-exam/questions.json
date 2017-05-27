@@ -142,6 +142,15 @@
             "c": "The function may return different data types",
             "d": "The function accepts unsafe code",
             "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn my_sum(x: u8, y: u8) -> u8 {\nx + y\n}\n\nfn main() {\nlet function: fn(u8, u8) -> u32 = my_sum;\nprintln!(\"{}\", function(10, 10));\n}",
+            "a": "No, the function return type does not match with the expected one",
+            "b": "No, pointers to functions do not exist in Rust",
+            "c": "No, 10 is too large for the u8 type",
+            "d": "Yes",
+            "answer": "a"
         }
     ]
 }
