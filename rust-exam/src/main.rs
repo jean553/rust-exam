@@ -7,6 +7,11 @@ use std::fs::File;
 
 use serde_json::value::Value;
 
+/// Displays a dashes separator
+fn display_separator() {
+    println!("----------------------");
+}
+
 fn main() {
 
     println!("rust-exam");
@@ -19,7 +24,7 @@ fn main() {
 
     let mut mark: u8 = 0;
 
-    for counter in 0..8 {
+    for counter in 0..11 {
 
         let group = &json["questions"][counter];
 
@@ -29,10 +34,14 @@ fn main() {
             group["question"].as_str().unwrap()
         );
 
+        display_separator();
+
         println!(
             "{}", 
             group["code"].as_str().unwrap()
         );
+
+        display_separator();
 
         println!(
             "a) {}",
@@ -72,7 +81,7 @@ fn main() {
     }
 
     println!(
-        "Mark: {} / 8",
+        "Mark: {} / 11",
         mark
     );
 }
