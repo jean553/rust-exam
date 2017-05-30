@@ -160,6 +160,15 @@
             "c": "Yes and it displays a warning during the compilation",
             "d": "No",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let array = vec![1, 2, 3, 4, 5];\n\nfor i in 0..10 {\n\nmatch array.get(i) {\nSome(n) => println(\"{}\", n),\nNone => println(\"X\")\n};}",
+            "a": "No, get() returns an integer, not an Option",
+            "b": "No, i can be greater than 4 which exceeds the vector size",
+            "c": "Yes, it displays 1 2 3 4 5 X X X X X",
+            "d": "Yes, it displays 1 2 3 4 5 X X X X",
+            "answer": "c"
         }
     ]
 }
