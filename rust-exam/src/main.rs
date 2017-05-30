@@ -90,7 +90,7 @@ fn main() {
     }
 
     println!(
-        "Mark: {} / 11",
+        "Mark: {} / 17",
         mark
     );
 }

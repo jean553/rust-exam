@@ -151,6 +151,15 @@
             "c": "No, 10 is too large for the u8 type",
             "d": "Yes",
             "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let tuple: (u32, f64) = (10, 10);",
+            "a": "Yes and it runs without any error",
+            "b": "Yes and it displays an error when trying to cast an integer into a float",
+            "c": "Yes and it displays a warning during the compilation",
+            "d": "No",
+            "answer": "d"
         }
     ]
 }
