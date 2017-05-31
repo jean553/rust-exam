@@ -55,6 +55,15 @@
             "answer": "a"
         },
         {
+            "question": "Does the following code compile ?",
+            "code": "let vs = vec![1, 2, 3]; \nfor v in &mut vs {println!(\"{}\", v);} \nprintln!(\"{}\", vs[0]);",
+            "a": "Yes, it compiles and it displays 1 2 3 1",
+            "b": "Yes, it compiles and it displays 1 2 3",
+            "c": "Yes, it compiles and it displays 1 2 3 and generates an index out of bounds error",
+            "d": "No",
+            "answer": "d"
+        },
+        {
             "question": "Is the following code a `binding` in Rust and what is the most correct definition of a `binding` ?",
             "code": "let (a, b) = (5, 10);",
             "a": "The example code is a binding, it binds some values to names, the left-side is called a `pattern`.",
