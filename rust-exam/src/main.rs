@@ -1,4 +1,5 @@
 extern crate serde_json;
+extern crate rand;
 
 use std::io;
 use std::io::Read;
@@ -6,6 +7,8 @@ use std::io::Read;
 use std::fs::File;
 
 use serde_json::value::Value;
+
+use rand::Rng;
 
 /// Displays a dashes separator
 fn display_separator() {
@@ -37,9 +40,13 @@ fn main() {
 
     let mut mark: u8 = 0;
 
-    for counter in 0..22 {
+    for counter in 0..20 {
 
-        let group = &json["questions"][counter];
+        /* we never check if a number has already been selected;
+           in fact, the amount of questions will become high enough
+           to ignore this case (the number of asked questions is still 20) */
+        let random = rand::thread_rng().gen_range(0, 22);
+        let group = &json["questions"][random];
 
         println!(
             "{}. {}",
@@ -90,7 +97,7 @@ fn main() {
     }
 
     println!(
-        "Mark: {} / 22",
+        "Mark: {} / 20",
         mark
     );
 }
