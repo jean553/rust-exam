@@ -267,6 +267,15 @@
             "c": "Unsigned integer is not a primitive data type",
             "d": "Vector has a specific implementation",
             "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(mut a: Vec<u32>, b: &Vec<u8>, c: &mut Vec<u16>) -> Vec<u32> {\na[0] = 15;\nc[0] = 20;\nreturn a;\n}\n\nfn main() {\nlet mut first_array = vec![10, 20, 30];\nlet second_array = vec![100, 200, 300];\nlet mut third_array = vec![1000, 2000, 3000];\n\nlet new_array = function(\nfirst_array,\n&second_array,\n&mut third_array,\n);\n\nprintln!(\n\"{}, {}, {}\",\nnew_array[0],\nsecond_array[0],\nthird_array[0],\n);\n}",
+            "a": "No",
+            "b": "Yes, the displayed result is 10 100 1000",
+            "c": "Yes, the displayed result is 15 100 1000",
+            "d": "Yes, the displayed result is 15 100 20",
+            "answer": "d"
         }
     ]
 }
