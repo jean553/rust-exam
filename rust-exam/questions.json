@@ -205,6 +205,15 @@
             "c": "Both of the pointer to the vector on the stack and the heap contant are deleted",
             "d": "A garbage collector has to be manually executed to remove the heap content",
             "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let array = vec![10, 20, 30];\nlet other = array;\nprintln!(\"{}\", array[0]);",
+            "a": "Yes, the displayed content is 10",
+            "b": "Yes, the displayed content is 0",
+            "c": "Yes, the displayed content is undefined",
+            "d": "No",
+            "answer": "d"
         }
     ]
 }
