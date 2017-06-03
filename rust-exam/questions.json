@@ -250,6 +250,15 @@
             "c": "Yes, the displayed content is 10 10",
             "d": "Yes, the displayed content is 10 0",
             "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(array: &mut Vec<u32>) {\narray[0] = 100;\n}\n\nfn main() {\nlet mut array = vec![10, 20, 30];\nfunction(&mut array);\nprintln!(\"{}\", array[0]);\n}",
+            "a": "No, the array parameter into the function() is not mutable",
+            "b": "No, the given parameter to the function() when calling is not a mutable reference",
+            "c": "No, the array variable declared in main() is not mutable",
+            "d": "Yes",
+            "answer": "d"
         }
     ]
 }
