@@ -259,6 +259,14 @@
             "c": "No, the array variable declared in main() is not mutable",
             "d": "Yes",
             "answer": "d"
+        },
+        {
+            "question": "Why using the = operator on a vector moves it and using the same operator on an unsigned integer copies it ?",
+            "a": "Move semantics does not work on unsigned integers and floats",
+            "b": "Primitive data types implement the Copy trait",
+            "c": "Unsigned integer is not a primitive data type",
+            "d": "Vector has a specific implementation",
+            "answer": "b"
         }
     ]
 }
