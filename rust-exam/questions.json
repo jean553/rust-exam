@@ -214,6 +214,15 @@
             "c": "Yes, the displayed content is undefined",
             "d": "No",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x: u32 = 100;\nlet mut y: u32 = x;\ny += 10;\nprintln!(\"{} {}\", x, y);",
+            "a": "Yes, the displayed content is 100 110",
+            "b": "Yes, the displayed content is 110 110",
+            "c": "No, the x variable does not have any ownership anymore when println!()",
+            "d": "No, the y variable cannot be modified",
+            "answer": "c"
         }
     ]
 }
