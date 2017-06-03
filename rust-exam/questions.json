@@ -196,6 +196,15 @@
             "c": "Yes, it displays 1 2 3 4 5 X X X X X",
             "d": "Yes, it displays 1 2 3 4 5 X X X X",
             "answer": "c"
+        },
+        {
+            "question": "How is removed the vector from the heap memory ?",
+            "code": "fn main(){\nlet array = vec![10, 20, 30];\n}",
+            "a": "The vector is not allocated on the heap",
+            "b": "The pointer to the vector is removed from the stack, the heap content is not deleted",
+            "c": "Both of the pointer to the vector on the stack and the heap contant are deleted",
+            "d": "A garbage collector has to be manually executed to remove the heap content",
+            "answer": "c"
         }
     ]
 }
