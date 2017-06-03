@@ -241,6 +241,15 @@
             "c": "Yes, the displayed content is 10 10",
             "d": "Yes, the displayed content is 10 0",
             "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(array: &Vec<u32>) {\nprintln!(\"{}\", array[0]);\n}\n\nfn main() {\nlet array = vec![10, 20, 30];\nfunction(&array);\nprintln!(\"{}\", array[0]);\n}",
+            "a": "No, the call to function() takes the ownership from the array declared into the main()",
+            "b": "No, function() is not allowed to get a parameter that is not a reference",
+            "c": "Yes, the displayed content is 10 10",
+            "d": "Yes, the displayed content is 10 0",
+            "answer": "c"
         }
     ]
 }
