@@ -196,6 +196,86 @@
             "c": "Yes, it displays 1 2 3 4 5 X X X X X",
             "d": "Yes, it displays 1 2 3 4 5 X X X X",
             "answer": "c"
+        },
+        {
+            "question": "How is removed the vector from the heap memory ?",
+            "code": "fn main(){\nlet array = vec![10, 20, 30];\n}",
+            "a": "The vector is not allocated on the heap",
+            "b": "The pointer to the vector is removed from the stack, the heap content is not deleted",
+            "c": "Both of the pointer to the vector on the stack and the heap contant are deleted",
+            "d": "A garbage collector has to be manually executed to remove the heap content",
+            "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let array = vec![10, 20, 30];\nlet other = array;\nprintln!(\"{}\", array[0]);",
+            "a": "Yes, the displayed content is 10",
+            "b": "Yes, the displayed content is 0",
+            "c": "Yes, the displayed content is undefined",
+            "d": "No",
+            "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let x: u32 = 100;\nlet mut y: u32 = x;\ny += 10;\nprintln!(\"{} {}\", x, y);",
+            "a": "Yes, the displayed content is 100 110",
+            "b": "Yes, the displayed content is 110 110",
+            "c": "No, the x variable does not have any ownership anymore when println!()",
+            "d": "No, the y variable cannot be modified",
+            "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(array: Vec<u32>) {\nprintln!(\"{}\", array[0]);\n}\n\nfn main() {\nlet array = vec![10, 20, 30];\nfunction(array);\nprintln!(\"{}\", array[0]);\n}",
+            "a": "No, the call to function() takes the ownership from the array declared into the main()",
+            "b": "No, function() is not allowed to get a parameter that is not a reference",
+            "c": "Yes, the displayed content is 10 10",
+            "d": "Yes, the displayed content is 10 0",
+            "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(array: &Vec<u32>) {\nprintln!(\"{}\", array[0]);\n}\n\nfn main() {\nlet array = vec![10, 20, 30];\nfunction(array);\nprintln!(\"{}\", array[0]);\n}",
+            "a": "No, the call to function() takes the ownership from the array declared into the main()",
+            "b": "No, function() is not allowed to get a parameter that is not a reference",
+            "c": "Yes, the displayed content is 10 10",
+            "d": "Yes, the displayed content is 10 0",
+            "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(array: &Vec<u32>) {\nprintln!(\"{}\", array[0]);\n}\n\nfn main() {\nlet array = vec![10, 20, 30];\nfunction(&array);\nprintln!(\"{}\", array[0]);\n}",
+            "a": "No, the call to function() takes the ownership from the array declared into the main()",
+            "b": "No, function() is not allowed to get a parameter that is not a reference",
+            "c": "Yes, the displayed content is 10 10",
+            "d": "Yes, the displayed content is 10 0",
+            "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(array: &mut Vec<u32>) {\narray[0] = 100;\n}\n\nfn main() {\nlet mut array = vec![10, 20, 30];\nfunction(&mut array);\nprintln!(\"{}\", array[0]);\n}",
+            "a": "No, the array parameter into the function() is not mutable",
+            "b": "No, the given parameter to the function() when calling is not a mutable reference",
+            "c": "No, the array variable declared in main() is not mutable",
+            "d": "Yes",
+            "answer": "d"
+        },
+        {
+            "question": "Why using the = operator on a vector moves it and using the same operator on an unsigned integer copies it ?",
+            "a": "Move semantics does not work on unsigned integers and floats",
+            "b": "Primitive data types implement the Copy trait",
+            "c": "Unsigned integer is not a primitive data type",
+            "d": "Vector has a specific implementation",
+            "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn function(mut a: Vec<u32>, b: &Vec<u8>, c: &mut Vec<u16>) -> Vec<u32> {\na[0] = 15;\nc[0] = 20;\nreturn a;\n}\n\nfn main() {\nlet mut first_array = vec![10, 20, 30];\nlet second_array = vec![100, 200, 300];\nlet mut third_array = vec![1000, 2000, 3000];\n\nlet new_array = function(\nfirst_array,\n&second_array,\n&mut third_array,\n);\n\nprintln!(\n\"{}, {}, {}\",\nnew_array[0],\nsecond_array[0],\nthird_array[0],\n);\n}",
+            "a": "No",
+            "b": "Yes, the displayed result is 10 100 1000",
+            "c": "Yes, the displayed result is 15 100 1000",
+            "d": "Yes, the displayed result is 15 100 20",
+            "answer": "d"
         }
     ]
 }
