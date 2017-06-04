@@ -294,6 +294,15 @@
             "c": "No, b is a reference and a reference cannot be used to build another one",
             "d": "Yes, it displays 20",
             "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut a = 50;\nlet b = &mut a;\na = 20;",
+            "a": "No, a value has been borrowed by b, the value cannot be borrowed anymore in the current scope",
+            "b": "No, it is not allowed to have two bindings to the same variable (a and b)",
+            "c": "Yes, a is equal to 20 at the end",
+            "d": "Yes, a is equal to 50 at the end",
+            "answer": "a"
         }
     ]
 }
