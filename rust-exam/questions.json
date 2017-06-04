@@ -276,6 +276,15 @@
             "c": "Yes, the displayed result is 15 100 1000",
             "d": "Yes, the displayed result is 15 100 20",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut value: u8 = 5;\n{\nlet second = &mut value;\n*second = 10;\n}\nprintln!(\"{}\", value);",
+            "a": "No, the variable second must be declared as mutable",
+            "b": "No, the variable second cannot take a reference to value because value is out of scope",
+            "c": "Yes, it displays 5",
+            "d": "Yes, it displays 10",
+            "answer": "d"
         }
     ]
 }
