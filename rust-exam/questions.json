@@ -303,6 +303,15 @@
             "c": "Yes, a is equal to 20 at the end",
             "d": "Yes, a is equal to 50 at the end",
             "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut a = 5;\nlet b = &mut a;\nlet mut a = 10;\na = 200;",
+            "a": "No, a cannot be declared two times",
+            "b": "No, it is not allowed to shadow a variable if it has been borrowed in the current scope",
+            "c": "No, it is not allowed to shadow a variable if the borrowing reference is mutable but allowed if the borrowing reference is immutable",
+            "d": "Yes",
+            "answer": "d"
         }
     ]
 }
