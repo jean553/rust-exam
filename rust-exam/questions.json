@@ -285,6 +285,15 @@
             "c": "Yes, it displays 5",
             "d": "Yes, it displays 10",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let a = 5;\nlet b = &a;\nlet mut c = b;\nc = 20;\nprintln!(\"{}\", c);",
+            "a": "No, c cannot be mutable because b and a are not mutables",
+            "b": "No, 20 cannot be given to c because c type is a reference to an integer and not an integer itself",
+            "c": "No, b is a reference and a reference cannot be used to build another one",
+            "d": "Yes, it displays 20",
+            "answer": "b"
         }
     ]
 }
