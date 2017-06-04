@@ -276,6 +276,42 @@
             "c": "Yes, the displayed result is 15 100 1000",
             "d": "Yes, the displayed result is 15 100 20",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut value: u8 = 5;\n{\nlet second = &mut value;\n*second = 10;\n}\nprintln!(\"{}\", value);",
+            "a": "No, the variable second must be declared as mutable",
+            "b": "No, the variable second cannot take a reference to value because value is out of scope",
+            "c": "Yes, it displays 5",
+            "d": "Yes, it displays 10",
+            "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let a = 5;\nlet b = &a;\nlet mut c = b;\nc = 20;\nprintln!(\"{}\", c);",
+            "a": "No, c cannot be mutable because b and a are not mutables",
+            "b": "No, 20 cannot be given to c because c type is a reference to an integer and not an integer itself",
+            "c": "No, b is a reference and a reference cannot be used to build another one",
+            "d": "Yes, it displays 20",
+            "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut a = 50;\nlet b = &mut a;\na = 20;",
+            "a": "No, a value has been borrowed by b, the value cannot be borrowed anymore in the current scope",
+            "b": "No, it is not allowed to have two bindings to the same variable (a and b)",
+            "c": "Yes, a is equal to 20 at the end",
+            "d": "Yes, a is equal to 50 at the end",
+            "answer": "a"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "let mut a = 5;\nlet b = &mut a;\nlet mut a = 10;\na = 200;",
+            "a": "No, a cannot be declared two times",
+            "b": "No, it is not allowed to shadow a variable if it has been borrowed in the current scope",
+            "c": "No, it is not allowed to shadow a variable if the borrowing reference is mutable but allowed if the borrowing reference is immutable",
+            "d": "Yes",
+            "answer": "d"
         }
     ]
 }
