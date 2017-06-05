@@ -45,7 +45,7 @@ fn main() {
         /* we never check if a number has already been selected;
            in fact, the amount of questions will become high enough
            to ignore this case (the number of asked questions is still 20) */
-        let random = rand::thread_rng().gen_range(0, 22);
+        let random = rand::thread_rng().gen_range(0, 35);
         let group = &json["questions"][random];
 
         println!(
