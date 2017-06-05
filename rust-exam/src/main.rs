@@ -92,7 +92,12 @@ fn main() {
                 println!("Correct!");
                 mark += 1;
             },
-            false => println!("Wrong"),
+            false => {
+                println!(
+                    "Wrong, the correct answer is : {}",
+                    answer
+                )
+            }
         }
     }
 
