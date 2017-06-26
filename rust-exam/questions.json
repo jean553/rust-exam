@@ -321,6 +321,15 @@
             "c": "Yes, 'a is the lifetime of the reference value",
             "d": "Yes, 'a is the lifetime of the foo method",
             "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn foo<'a>(value: &'a mut u8) {}",
+            "a": "No, references with lifetimes cannot be mutable",
+            "b": "No, lifetimes cannot be part of the function <> parameters",
+            "c": "Yes, 'a is the lifetime of the foo method",
+            "d": "Yes, 'a is the lifetime of the reference value",
+            "answer": "d"
         }
     ]
 }
