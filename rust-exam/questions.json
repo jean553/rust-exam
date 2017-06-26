@@ -312,6 +312,15 @@
             "c": "No, it is not allowed to shadow a variable if the borrowing reference is mutable but allowed if the borrowing reference is immutable",
             "d": "Yes",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn foo<'a>(value: &'a u32) {}",
+            "a": "No, a function cannot be empty",
+            "b": "No, lifetimes cannot be part of the function <> parameters",
+            "c": "Yes, 'a is the lifetime of the reference value",
+            "d": "Yes, 'a is the lifetime of the foo method",
+            "answer": "c"
         }
     ]
 }
