@@ -339,6 +339,15 @@
             "c": "No, a structure cannot contains references",
             "d": "No, a structure cannot contains only one variable as it makes no sense",
             "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "{\nlet x: &u8;\nlet v = 10;\nx = &v;\n}",
+            "a": "Yes",
+            "b": "No, the x reference must be initialized at the first line",
+            "c": "No, the x reference is not mutable and overwritted with &v",
+            "d": "No, v goes out of the scope when x still references it",
+            "answer": "d"
         }
     ]
 }
