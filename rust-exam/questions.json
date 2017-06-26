@@ -330,6 +330,15 @@
             "c": "Yes, 'a is the lifetime of the foo method",
             "d": "Yes, 'a is the lifetime of the reference value",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "struct Structure {\nreference: &u8\n}\n\nfn main() {\nlet value = 10;\nlet obj = Structure {\nreference: &value,\n};\n}",
+            "a": "Yes",
+            "b": "No, a lifetime is mandatory for structure variables that are references",
+            "c": "No, a structure cannot contains references",
+            "d": "No, a structure cannot contains only one variable as it makes no sense",
+            "answer": "b"
         }
     ]
 }
