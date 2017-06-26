@@ -348,6 +348,15 @@
             "c": "No, the x reference is not mutable and overwritted with &v",
             "d": "No, v goes out of the scope when x still references it",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "{\nlet v = 10;\nlet x: &u8;\nx = &v;\n}",
+            "a": "Yes",
+            "b": "No, the x reference must be initialized at the first line",
+            "c": "No, the x reference is not mutable and overwritted with &v",
+            "d": "No, v goes out of the scope when x still references it",
+            "answer": "a"
         }
     ]
 }
