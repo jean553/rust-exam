@@ -312,6 +312,51 @@
             "c": "No, it is not allowed to shadow a variable if the borrowing reference is mutable but allowed if the borrowing reference is immutable",
             "d": "Yes",
             "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn foo<'a>(value: &'a u32) {}",
+            "a": "No, a function cannot be empty",
+            "b": "No, lifetimes cannot be part of the function <> parameters",
+            "c": "Yes, 'a is the lifetime of the reference value",
+            "d": "Yes, 'a is the lifetime of the foo method",
+            "answer": "c"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "fn foo<'a>(value: &'a mut u8) {}",
+            "a": "No, references with lifetimes cannot be mutable",
+            "b": "No, lifetimes cannot be part of the function <> parameters",
+            "c": "Yes, 'a is the lifetime of the foo method",
+            "d": "Yes, 'a is the lifetime of the reference value",
+            "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "struct Structure {\nreference: &u8\n}\n\nfn main() {\nlet value = 10;\nlet obj = Structure {\nreference: &value,\n};\n}",
+            "a": "Yes",
+            "b": "No, a lifetime is mandatory for structure variables that are references",
+            "c": "No, a structure cannot contains references",
+            "d": "No, a structure cannot contains only one variable as it makes no sense",
+            "answer": "b"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "{\nlet x: &u8;\nlet v = 10;\nx = &v;\n}",
+            "a": "Yes",
+            "b": "No, the x reference must be initialized at the first line",
+            "c": "No, the x reference is not mutable and overwritted with &v",
+            "d": "No, v goes out of the scope when x still references it",
+            "answer": "d"
+        },
+        {
+            "question": "Does the following code compile ?",
+            "code": "{\nlet v = 10;\nlet x: &u8;\nx = &v;\n}",
+            "a": "Yes",
+            "b": "No, the x reference must be initialized at the first line",
+            "c": "No, the x reference is not mutable and overwritted with &v",
+            "d": "No, v goes out of the scope when x still references it",
+            "answer": "a"
         }
     ]
 }
