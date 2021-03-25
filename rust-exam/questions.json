@@ -158,7 +158,7 @@
             "code": "fn get_value(x: u32) {\nx + 5;\n}\n\nfn main() {\nprintln!(\"{}\", get_value(10));\n}",
             "a": "Yes",
             "b": "No, the x argument of the function get_value is not mutable",
-            "c": "No, function missing return value",
+            "c": "No, function signature missing return value",
             "d": "No, the returned value of get_value cannot be a parameter of the println! macro",
             "answer": "d"
         },
